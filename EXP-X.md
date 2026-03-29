@@ -31,8 +31,27 @@ brain injuries. MATLAB provides efficient tools for signal visualization and pro
 6.	Display the result
 
 # MAT LAB CODE :
+clc;
+clear;
+close all;
+
+% Load EEG signal
+load eegdata.mat
+
+fs = 256; % Sampling frequency
+t = (0:length(eeg)-1)/fs;
+
+% Plot EEG signal
+plot(t,eeg);
+xlabel('Time (seconds)');
+ylabel('Amplitude');
+title('EEG Signal');
+grid on;
+
 
 # OUTPUT GRAPH :
+![WhatsApp Image 2026-03-29 at 22 47 59](https://github.com/user-attachments/assets/d82ec1f4-50a5-447d-b879-a6dac6c959cc)
+
 
 # RESULT :
 The EEG signal was successfully analyzed and its waveform was visualized using MATLAB
