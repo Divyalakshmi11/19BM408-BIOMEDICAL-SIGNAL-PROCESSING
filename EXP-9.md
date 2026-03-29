@@ -31,8 +31,28 @@ h(n)=h_d (n)⋅w(n)
 5.	Plot response
 
 # MATLAB CODE :
+clc;
+clear;
+close all;
+
+N = 20;
+wc = 0.4*pi;
+n = 0:N;
+alpha = N/2;
+
+hd = sin(wc*(n-alpha))./(pi*(n-alpha));
+hd(alpha+1) = wc/pi;
+
+w = hann(N+1)';
+h = hd.*w;
+
+freqz(h,1);
+title('FIR using Hanning Window');
+
 
 # OUTPUT GRAPH :
+![WhatsApp Image 2026-03-29 at 22 45 36](https://github.com/user-attachments/assets/5c2c29a7-504f-48b5-999b-510bcd32a753)
+
 
 # RESULT :
 The FIR filter was designed using Hanning window.
