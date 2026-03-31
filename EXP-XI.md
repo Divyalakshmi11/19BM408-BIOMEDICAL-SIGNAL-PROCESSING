@@ -27,8 +27,28 @@ Spectral analysis helps in identifying EEG rhythms such as alpha and beta waves,
 6) Identify dominant frequency components.
 
 # MATLAB CODE :
+clc;
+clear;
+close all;
+
+load eegdata.mat
+
+fs = 256;
+N = length(eeg);
+
+X = fft(eeg);
+f = (0:N-1)*(fs/N);
+
+plot(f,abs(X));
+xlabel('Frequency (Hz)');
+ylabel('Magnitude');
+title('EEG Frequency Spectrum');
+grid on;
+
 
 # OUTPUT GRAPH :
+![WhatsApp Image 2026-03-31 at 22 32 54](https://github.com/user-attachments/assets/6d0048a1-1b87-4174-9cd6-ebce70df44c6)
+
 
 # RESULT :
 The EEG signal spectrum was successfully obtained using FFT and frequency components were analyzed.
